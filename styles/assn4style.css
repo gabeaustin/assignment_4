@@ -1,0 +1,16 @@
+.note_to_user {
+	font-style: italic;
+	font-weight: bold;
+	color: #ff0000;
+	font-variant: small-caps;
+}
+
+#doc_title {
+	font-family: sans-serif;
+	text-align: center;
+	color: #008000;
+}
+
+#result {
+	color: #0000ff;
+}
