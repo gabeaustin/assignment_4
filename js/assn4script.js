@@ -1,3 +1,22 @@
+function MenuChoice(selection) {
+	document.getElementById("customerlist").style.visibility = "hidden";
+	
+switch(selection) {
+		case "Home":
+			break;
+		case "List Customers":
+			document.getElementById("customerlist").style.visibility = "visible";
+			MenuChoice("customerlist");
+			//ListCustomers();
+			break;
+		case "None":
+			// No menu item selected so no section should be displayed
+			break;
+		default:
+			alert("Please select a different menu option");
+	}
+}
+
 function CreateCustomer()
 {
 	var objRequest = new XMLHttpRequest();
@@ -61,8 +80,26 @@ function ListCustomers() {
 			document.getElementById("customerid").innerHTML = display;
 		}
 	}
-	
 } // ends list customer function
+
+
+		// Function that displays results
+		function GenerateOutput(result) {
+			var display = "<table><tr><th>Customer ID</th><th>Company Name</th><th>City</th></tr>";
+			
+			var count = 0;
+			
+			for(var count = 0; count < result.length; count++)
+				{
+					display += "<tr><td>" + result[count].CustomerID + "</td><td>" + result[count].CompanyName + "</td><td>" + result[count].City + "</td></tr>";
+				}
+				
+					display += "</table>";
+					document.getElementById("customerid").innerHTML = display;
+		}
+		
+
+		
 
 
 
